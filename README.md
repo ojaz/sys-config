@@ -15,15 +15,16 @@ installing, see the requirements section below.
 
 
 ##### Requirements
-* vim 8.0   (https://github.com/vim/vim.git)
-* zsh       (http://www.zsh.org/)
-* git       (https://git-scm.com/downloads)
+* vim >= 8.0 (https://github.com/vim/vim.git)
+* zsh >= 5.0 (http://www.zsh.org/)
+* git        (https://git-scm.com/downloads)
 
 
 ### Setup
 
 ##### Installation
-1. `./install.sh`
+1. Run `./install.sh` and follow the prompts
+2. Open Vim and run `:PlugInstall`
 
 If you already have .zshrc and/or .vimrc files, you will be prompted for an
 overwrite of your files. Be sure to back up any files you already have before
