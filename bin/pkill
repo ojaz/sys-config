@@ -1,0 +1,12 @@
+#!/bin/bash
+
+killing=true
+while $killing; do
+    pid=$(netstat -nap | grep $1 | grep -oP '\b[0-9]*(?=/)')
+    if [ "x$pid" != 'x' ]; then
+        echo killing $pid;
+        kill $pid;
+    else
+        killing=false;
+    fi;
+done; 

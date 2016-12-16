@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# kill processes with extreme prejudice
+kill -9 "$@"
