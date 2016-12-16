@@ -9,6 +9,14 @@
 #
 # Notes: Requires unicode for git characters
 
+# display custom virtualenv indicator
+prompt_venv() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        echo -n "%{$fg[]%}(env)"
+    else
+        echo -n ""
+    fi
+}
 
 # display time in hours:minutes
 prompt_time() {
@@ -100,7 +108,7 @@ prompt_git() {
 build_prompt() {
   RETVAL=$?
   prompt_vi
-  # prompt_time
+  prompt_time
   prompt_context
   prompt_path
   prompt_git

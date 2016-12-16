@@ -7,7 +7,7 @@ ZSH_THEME="nox"
 CASE_SENSITIVE=true
 
 # Load Plugins
-plugins=(git, vi-nox)
+plugins=(git, nox-mode)
 
 source $ZSH/oh-my-zsh.sh
 

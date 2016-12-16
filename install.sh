@@ -104,7 +104,7 @@ term_setup() {
             git clone -q "https://github.com/robbyrussell/oh-my-zsh.git" \
                         "$HOME/.oh-my-zsh"
             cp zsh/themes/nox.zsh-theme $HOME/.oh-my-zsh/themes
-            cp -r zsh/plugins/vi-nox/ $HOME/.oh-my-zsh/plugins
+            cp -r zsh/plugins/nox-mode $HOME/.oh-my-zsh/plugins
             echo "Installed oh-my-zsh"
         fi
     fi
