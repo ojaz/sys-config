@@ -68,15 +68,15 @@ install_plugins() {
 # Install solarized profile and zsh configurations
 # ==================================================
 term_setup() {
-    sol="https://github.com/Anthony25/gnome-terminal-colors-solarized.git"
+    theme="https://github.com/Anthony25/gnome-terminal-colors-solarized.git"
 
     ## Set up solarized terminal color scheme
     if ! [ -d "solarized" ]; then
         echo -n "Install solarized terminal theme? [y/n]: "
-        read install_sol
+        read install_theme
 
-        if [ $install_sol == "y" ]; then
-            git clone -q $sol solarized
+        if [ $install_theme == "y" ]; then
+            git clone -q $theme solarized
             cd solarized
             ./install.sh && cd $WORKING_DIR
             echo
@@ -98,11 +98,12 @@ term_setup() {
     ## Install oh-my-zsh
     if ! [ -d "$HOME/.oh-my-zsh" ]; then
         echo -n "Install Oh My ZSH? [y/n]: "
-        read install_omzsh
+        read install_ohmyzsh
 
-        if [ $install_omzsh == "y" ]; then
-            git clone -q "https://github.com/robbyrussell/oh-my-zsh.git" \
-                        "$HOME/.oh-my-zsh"
+        if [ $install_ohmyzsh == "y" ]; then
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+            # Install custom themes
             cp zsh/themes/nox.zsh-theme $HOME/.oh-my-zsh/themes
             cp -r zsh/plugins/nox-mode $HOME/.oh-my-zsh/plugins
             echo "Installed oh-my-zsh"

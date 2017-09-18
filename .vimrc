@@ -1,6 +1,8 @@
 " ===================================
 " BASIC SETTINGS
 " ===================================
+let mapleader = "\<space>"
+
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
 set laststatus=2       " always display the status line
@@ -25,10 +27,16 @@ set smarttab                             " enable file based tabbing
 set smartindent                          " enable file based indentation
 
 " ===================================
+" EDITING
+" ===================================
+nmap <leader>pp :setlocal paste!<CR>  " <leader>pp toggles paste mode
+nmap <leader>ss :setlocal spell!<CR>  " <leader>ss toggles spell checking
+nmap <leader>hh :noh<CR>              " <leader>hh turns off search highlight
+
+" ===================================
 " FILE SPECIFIC FORMATTING
 " ===================================
 autocmd FileType html setlocal shiftwidth=2 tabstop=2  " HMTL
-autocmd FileType css setlocal shiftwidth=2 tabstop=2   " CSS
 
 " ===================================
 " HISTORY / SEARCH
@@ -40,6 +48,8 @@ set undofile                 " enable persistent undos
 set undodir=$HOME/.vim/undo  " set undo saves directory
 set undolevels=1000          " set undo history to 1000
 set undoreload=1000          " load undo history when opening a file
+set wildmenu                 " display ls while searching for file
+set wildmode=full
 
 " ===================================
 " BACKUPS
@@ -59,18 +69,23 @@ nmap <C-l> <C-w><Right>
 nmap <C-n> :bn<cr>
 nmap <C-p> :bp<cr>
 
+" ===================================
+" GIT
+" ===================================
+nmap gitc /^<<<<<<< HEAD$<cr>  " goto git conflict
 
 " ===================================
 " # PLUGIN SETTINGS / CONFIGURATIONS
 " ===================================
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-syntastic/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'isRuslan/vim-es6'
 call plug#end()
 
 " ===================================
@@ -79,6 +94,8 @@ call plug#end()
 syntax enable          " enable syntax highlighting
 set background=dark    " set dark background
 colorscheme solarized  " enable solarized color scheme
+hi Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " ===================================
 " AIRLINE SETTINGS

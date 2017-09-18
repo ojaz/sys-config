@@ -16,9 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/local/bin:$PATH
 export JAVA_HOME=/usr/local/jdk1.8.0_101
-
-export PATH=$JAVA_HOME/bin:$PATH
-
+export JAVA_OPTS='Xms512M -Xmx1024M'
 
 ### SYSTEM SETTINGS
 ###############################
