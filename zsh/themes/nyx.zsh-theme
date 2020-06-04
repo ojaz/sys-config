@@ -1,4 +1,4 @@
-# Nox theme for use with oh-my-zsh, derived from agnoster's theme
+# Nyx theme for use with oh-my-zsh, derived from agnoster's theme
 #   (https://gist.github.com/3712874) by agnoster
 #
 # Format: [H:M] user@host:path branch [staged]

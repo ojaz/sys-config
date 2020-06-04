@@ -104,8 +104,8 @@ term_setup() {
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
             # Install custom themes
-            cp zsh/themes/nox.zsh-theme $HOME/.oh-my-zsh/themes
-            cp -r zsh/plugins/nox-mode $HOME/.oh-my-zsh/plugins
+            cp zsh/themes/nyx.zsh-theme $HOME/.oh-my-zsh/themes
+            cp -r zsh/plugins/nyx-mode $HOME/.oh-my-zsh/plugins
             echo "Installed oh-my-zsh"
         fi
     fi
